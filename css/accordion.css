@@ -1,0 +1,62 @@
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+  }
+  
+  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+  .active, .accordion:hover {
+    background-color: #ccc;
+  }
+  
+  .panel {
+    padding: 0;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
+
+  .panel ul{
+      padding: 0;
+      margin: 0;
+  }
+
+  .panel li{
+    list-style: none;
+    padding: 1em;
+    background-color: #eee;
+    width: 100%;
+    cursor: pointer;
+  }
+
+  .panel li:hover{
+    background-color: #c5c5c5;
+  }
+
+
+
+ 
+
+  .search-panel ul{
+      padding: 0;
+      margin: 0;
+  }
+
+  .search-panel li{
+    list-style: none;
+    padding: 1em;
+    background-color: #eee;
+    width: 100%;
+    cursor: pointer;
+  }
+
+  .search-panel li:hover{
+    background-color: #c5c5c5;
+  }

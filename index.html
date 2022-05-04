@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>W kiepskim świecie Kiepskie sprawy</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/playerstyle.css" />
+    <link rel="stylesheet" href="css/accordion.css" />
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.min.css"
+    />
+    <script type="module" src="js/player.js" defer></script>
+    <script type="text/javascript" src="js/controler.js" defer></script>
+    <script type="text/javascript" src="js/search.js" defer></script>
+    <script type="text/javascript" src="js/index.js" defer></script>
+    <script type="module" src="js/accordion.js" defer></script>
+    <script type="text/javascript" src="js/thumbnailgetter.js" defer></script>
+
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section class="top-bar">
+      <h3 id="episodeTitle"></h3>
+    </section>
+    <section class="display">
+      <div class="main-player">
+        <bp-player id="kiepskiPlayer"></bp-player>
+      </div>
+    </section>
+    <section class="search">
+      <div class="search-input">
+        <span class="mdi mdi-magnify"></span>
+        <input type="text" name="searchbar" id="searchbar" />
+      </div>
+    </section>
+    <section id="episodes"></section>
+    <div class="spacer" style="height: 2em"></div>
+
+    <!-- <div id="searchOutput"></div> -->
+  </body>
+</html>

@@ -72,6 +72,7 @@ const template = `
 `;
 
 export class Player extends HTMLElement {
+  static TAG = "bp-player";
   constructor() {
     super();
     this.processAtributes();
@@ -95,7 +96,7 @@ export class Player extends HTMLElement {
 
   processAtributes() {
     this.url = this.dataset["url"];
-    this.tlSteps = this.dataset["tlSteps"] || 400;
+    this.tlSteps = this.dataset["tlSteps"] || 800;
     this.idleTime = parseInt(this.dataset["idleTime"] || 2000);
     this.fullscreenDisabled = this.dataset["fullscreenDisabled"] != undefined;
     this.pictureInPictureEnabled =
@@ -283,12 +284,16 @@ export class Player extends HTMLElement {
     }
 
     //volume
+    if (window.screen.width > 600) {
 
-    this.controls.querySelector(".volume").addEventListener("click", () => {
+        console.log("male");
+    }
+    this.controls.querySelector(".volume").addEventListener("mouseover", () => {
       if (window.screen.width > 600) {
         this.controls
           .querySelector(".volume-popup")
           .classList.toggle("volume-popup-hidden");
+          console.log("male");
       } else {
         this.toggleMute();
       }
@@ -475,4 +480,4 @@ export class Player extends HTMLElement {
   }
 }
 
-customElements.define("bp-player", Player);
+customElements.define(Player.TAG, Player);

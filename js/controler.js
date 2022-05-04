@@ -1,4 +1,4 @@
-export class Controler {
+class Controler {
   constructor(playerid, e = 0, s = 0) {
     4;
     this.last = window.localStorage.getItem("last");
@@ -14,7 +14,7 @@ export class Controler {
 
   getLinks() {
     return new Promise((resolve, reject) => {
-      fetch("episodes.json")
+      fetch("bin/episodes.json")
 
         .then((response) => response.json())
         .then((el) => {
@@ -26,6 +26,10 @@ export class Controler {
         .then((el) => resolve(el))
         .catch((e) => reject(e));
     });
+  }
+
+  getEpisodeList(){
+    return this.episodeList;
   }
 
   getCurrentEpisode() {
@@ -50,11 +54,7 @@ export class Controler {
 
   loadEpisode() {
     document.querySelector("#episodeTitle").innerHTML =
-      this.getCurrentEpisode()["name"] +
-      " s:" +
-      this.season +
-      " e:" +
-      this.episode;
+      this.getCurrentEpisode()["name"]
     this.player.setURL(this.getCurrentEpisode()["url"]);
     this.player.setIntroTime(this.getCurrentEpisode()["intro"]);
 
@@ -84,4 +84,3 @@ export class Controler {
     }
   }
 }
-
