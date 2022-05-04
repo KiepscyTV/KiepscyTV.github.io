@@ -64,7 +64,7 @@ class Controler {
     this.player.setUpdateCallback(() => {
       window.localStorage.setItem(
         this.season + "-" + this.episode,
-        this.player.v.currentTime
+        this.player.video.currentTime
       );
     }, 30);
     if (this.isNextEpisode()) {

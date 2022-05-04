@@ -60,7 +60,6 @@ let displaySeasonList = (l) => {
 
   l.forEach((el, seasonNumber)=>{
     let s = document.createElement("button");
-    console.log(s.innerHTML);
     s.innerHTML ="Sezon "+(seasonNumber+1);
     s.classList.add("accordion");
     document.querySelector("#episodes").append(s);
@@ -98,3 +97,5 @@ for (i = 0; i < acc.length; i++) {
 }
 }
 
+let intro = new Intro();
+intro.singIntro()

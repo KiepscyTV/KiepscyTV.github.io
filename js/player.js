@@ -88,7 +88,7 @@ export class Player extends HTMLElement {
     this.video.playbackRate = this.playbackSpeed;
     this.controls = this.querySelector(".controls");
     this.timeline = this.querySelector(".timeline");
-    this.timeline.max = this.tlSteps;
+    this.timeline.max = this.timelineSteps;
     this.settings = this.querySelector(".settings");
     this.settingsPopup = this.querySelector(".settings-popup");
     this.controls.querySelector(".volume-slider").value =
@@ -104,7 +104,7 @@ export class Player extends HTMLElement {
 
   processHTMLAtributes() {
     this.url = this.dataset["url"];
-    this.tlSteps = this.dataset["tlSteps"] || 800;
+    this.timelineSteps = this.dataset["timelineSteps"] || 800;
     this.idleTime = parseInt(this.dataset["idleTime"] || 2000);
     this.fullscreenDisabled = this.dataset["fullscreenDisabled"] != undefined;
     this.pictureInPictureEnabled =
@@ -177,14 +177,14 @@ export class Player extends HTMLElement {
       this.container.webkitRequestFullscreen();
       screen.orientation
         .lock("landscape")
-        .then((res) => console.log(res))
-        .catch((err) => console.log(err));
+        // .then((res) => console.log(res))
+        .catch((err) => console.error(err));
     } else {
       this.container.requestFullscreen();
       screen.orientation
         .lock("landscape")
-        .then((res) => console.log(res))
-        .catch((err) => console.log(err));
+        // .then((res) => console.log(res))
+        .catch((err) => console.error(err));
     }
   }
 
@@ -217,10 +217,12 @@ export class Player extends HTMLElement {
       if (this.updateCallback.counter >= this.updateCallback.frequency) {
         this.updateCallback.function();
         this.updateCallback.counter = 0;
+
       } else {
         this.updateCallback.counter++;
       }
     }
+
   }
 
   getCurrentTime() {
@@ -296,14 +298,12 @@ export class Player extends HTMLElement {
     //volume
     if (window.screen.width > 600) {
 
-        console.log("male");
     }
     this.controls.querySelector(".volume").addEventListener("mouseover", () => {
       if (window.screen.width > 600) {
         this.controls
           .querySelector(".volume-popup")
           .classList.toggle("volume-popup-hidden");
-          console.log("male");
       } else {
         this.toggleMute();
       }
@@ -397,6 +397,7 @@ export class Player extends HTMLElement {
     //keys
 
     document.addEventListener("keydown", (e) => {
+      e.preventDefault();
       switch (e.key) {
         case " ":
           this.togglePlay();
