@@ -4,19 +4,12 @@ c.getLinks()
   .then((el) => {
     se.changeData(el);
     displaySeasonList(el);
-    console.log(el);
   })
   .then(() => c.loadEpisode())
   .catch((e) => console.error(e));
 
 
 
-// document.querySelector("#odpalaj").addEventListener("click", () => {
-//   c.setEpisode(
-//     parseInt(document.querySelector("#odc").value),
-//     parseInt(document.querySelector("#sezon").value)
-//   );
-// });
 
 document.querySelectorAll(".skip-time input").forEach((e) => {
   e.addEventListener("click", () => {
@@ -38,12 +31,6 @@ document.querySelector('#searchbar').addEventListener('input', (e)=>{
   
 })
 
-
-// c.episodeList.forEach(
-//   (e)=>{
-//     console.log(e);
-//   }
-// )
 
 let displayepisdeList = (l) => {
   console.log(l);

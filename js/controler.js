@@ -18,7 +18,6 @@ class Controler {
 
         .then((response) => response.json())
         .then((el) => {
-          console.log(el);
           return el;
         })
         .then((data) => (this.episodeList = data["episodes"]))
