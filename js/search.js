@@ -1,4 +1,6 @@
 class SearchEngine {
+  static ON_SEARCH_FOCUS_EVENT = 'searchFocus';
+
   constructor(episodeList = []) {
     this.episodeList = episodeList;
   }
@@ -17,8 +19,8 @@ class SearchEngine {
     }
   }
 
-  changeData(d) {
-    this.episodeList = d;
+  setEpisodeList(episodeList = []) {
+    this.episodeList = episodeList;
   }
 
   searchForEpisode(input, maxOutputs = 5) {

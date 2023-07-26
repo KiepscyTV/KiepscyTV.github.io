@@ -1,41 +1,35 @@
-const c = new Controler("#kiepskiPlayer");
-const se = new SearchEngine();
+const videoController = new Controler("#kiepskiPlayer");
+const searchEngine = new SearchEngine();
 
-c.getLinks()
+videoController
+  .getLinks()
   .then((el) => {
-    se.changeData(el);
+    searchEngine.setEpisodeList(el);
     displaySeasonList(el);
   })
-  .then(() => c.loadEpisode())
+  .then(() => videoController.loadEpisode())
   .catch((e) => console.error(e));
-
-
-
 
 document.querySelectorAll(".skip-time input").forEach((e) => {
   e.addEventListener("click", () => {
-    c.player.v.currentTime = e.value;
-    c.getCurrentEpisode()["intro"] = e.value;
+    videoController.player.v.currentTime = e.value;
+    videoController.getCurrentEpisode()["intro"] = e.value;
   });
 });
 
-
-document.querySelector('#searchbar').addEventListener('input', (e)=>{
-
-  let result = se.searchForEpisode(e.target.value);
-  console.log(result);
-  if (!!e.target.value){
-    displayepisdeList(result);
-  }else{
-    displaySeasonList(c.getEpisodeList());
-  }
+document.querySelector("#searchbar").addEventListener("input", (e) => {
+  let result = searchEngine.searchForEpisode(e.target.value);
   
-})
-
+  if (!!e.target.value) {
+    displayepisdeList(result);
+  } else {
+    displaySeasonList(videoController.getEpisodeList());
+  }
+});
 
 let displayepisdeList = (l) => {
   console.log(l);
-  document.querySelector("#episodes").innerHTML = '';
+  document.querySelector("#episodes").innerHTML = "";
   let panel = document.createElement("div");
   panel.classList.add("search-panel");
   document.querySelector("#episodes").append(panel);
@@ -46,22 +40,21 @@ let displayepisdeList = (l) => {
     let e = document.createElement("li");
     e.innerText = episode.episode.name;
 
-    e.addEventListener("click", ()=>{
-      c.setEpisode(episode.e, episode.s);
-      c.player.scrollIntoView();
-    })
+    e.addEventListener("click", () => {
+      videoController.setEpisode(episode.e, episode.s);
+      videoController.player.scrollIntoView();
+    });
 
     ol.append(e);
-  })
-
-}
+  });
+};
 
 let displaySeasonList = (l) => {
-  document.querySelector("#episodes").innerHTML = '';
+  document.querySelector("#episodes").innerHTML = "";
 
-  l.forEach((el, seasonNumber)=>{
+  l.forEach((el, seasonNumber) => {
     let s = document.createElement("button");
-    s.innerHTML ="Sezon "+(seasonNumber+1);
+    s.innerHTML = "Sezon " + (seasonNumber + 1);
     s.classList.add("accordion");
     document.querySelector("#episodes").append(s);
     let panel = document.createElement("div");
@@ -73,30 +66,30 @@ let displaySeasonList = (l) => {
       let e = document.createElement("li");
       e.innerText = episode.name;
 
-      e.addEventListener("click", ()=>{
-        c.setEpisode(num, seasonNumber);
-        c.player.scrollIntoView();
-      })
+      e.addEventListener("click", () => {
+        videoController.setEpisode(num, seasonNumber);
+        videoController.player.scrollIntoView();
+      });
 
       ol.append(e);
-    })
-  })
+    });
+  });
 
   var acc = document.getElementsByClassName("accordion");
-var i;
+  var i;
 
-for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var panel = this.nextElementSibling;
-    if (panel.style.maxHeight) {
-      panel.style.maxHeight = null;
-    } else {
-      panel.style.maxHeight = panel.scrollHeight + "px";
-    }
-  });
-}
-}
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function () {
+      this.classList.toggle("active");
+      var panel = this.nextElementSibling;
+      if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+      }
+    });
+  }
+};
 
 let intro = new Intro();
-intro.singIntro()
+intro.singIntro();
