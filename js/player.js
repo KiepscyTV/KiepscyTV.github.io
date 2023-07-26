@@ -397,21 +397,25 @@ export class Player extends HTMLElement {
     //keys
 
     document.addEventListener("keydown", (e) => {
-      e.preventDefault();
       switch (e.key) {
         case " ":
+          e.preventDefault();
           this.togglePlay();
           break;
         case "ArrowLeft":
+          e.preventDefault();
           this.video.currentTime -= 5;
           break;
         case "ArrowRight":
+          e.preventDefault();
           this.video.currentTime += 5;
           break;
         case "f":
+          e.preventDefault();
           this.toggleFullscreen();
           break;
         case "m":
+          e.preventDefault();
           this.toggleMute();
           break;
       }

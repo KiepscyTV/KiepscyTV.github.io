@@ -1,7 +1,7 @@
 class Controler {
   constructor(playerid, e = 0, s = 0) {
-    4;
     this.last = window.localStorage.getItem("last");
+
     if (!!this.last) {
       this.last = this.last.split("-");
       e = this.last[1];
