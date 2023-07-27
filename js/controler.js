@@ -15,7 +15,6 @@ class Controler {
   getLinks() {
     return new Promise((resolve, reject) => {
       fetch("bin/episodes.json")
-
         .then((response) => response.json())
         .then((el) => {
           return el;
@@ -27,7 +26,7 @@ class Controler {
     });
   }
 
-  getEpisodeList(){
+  getEpisodeList() {
     return this.episodeList;
   }
 
@@ -52,8 +51,7 @@ class Controler {
   }
 
   loadEpisode() {
-    document.querySelector("#episodeTitle").innerHTML =
-      this.getCurrentEpisode()["name"]
+    document.querySelector("#episodeTitle").innerHTML = this.getCurrentEpisode()["name"];
     this.player.setURL(this.getCurrentEpisode()["url"]);
     this.player.setIntroTime(this.getCurrentEpisode()["intro"]);
 
