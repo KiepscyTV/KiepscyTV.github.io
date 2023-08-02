@@ -1,66 +1,76 @@
 <!DOCTYPE html>
 <html lang="pl-PL">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>KiepscyTV / Świat Według Kiepskich / Online</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Oglądaj Świat według Kiepskich, całe odcinki za darmo, online i bez rejestracji. Wszystkie sezony kiepskich w jednym miejscu." />
-    <meta name="robots" content="index">
-    <meta property="og:locale" content="pl_PL" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Świat Według Kiepski / Online / Za Darmo / Bez Rejestracji / Wszystkie Sezony" />
-    <meta property="og:description" content="Świat Według Kiepskich / Całe Odcinki Za Darmo / Online / Bez Rejestracji / Wszystkie Sezony" />
-    <meta property="og:url" content="https://www.kiepscytv.github.io" />
-    <meta property="og:site_name" content="kiepscytv.github.io" />
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HPMBBDM02L"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/css/bootstrap-grid.min.css" integrity="sha512-Aa+z1qgIG+Hv4H2W3EMl3btnnwTQRA47ZiSecYSkWavHUkBF2aPOIIvlvjLCsjapW1IfsGrEO3FU693ReouVTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/playerstyle.css" />
-    <link rel="stylesheet" href="css/accordion.css" />
-    <link
-      rel="stylesheet"
-      href="//cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.min.css"
-    />
+    gtag('config', 'G-HPMBBDM02L');
+  </script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.min.js" integrity="sha512-EKWWs1ZcA2ZY9lbLISPz8aGR2+L7JVYqBAYTq5AXgBkSjRSuQEGqWx8R1zAX16KdXPaCjOCaKE8MCpU0wcHlHA==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
-    <script type="module" src="js/player.js" defer></script>
-    <script type="text/javascript" src="js/controler.js" defer></script>
-    <script type="text/javascript" src="js/search.js" defer></script>
-    <script type="text/javascript" src="js/sing.js" defer></script>
-    <script type="text/javascript" src="js/index.js" defer></script>
-    <script type="module" src="js/accordion.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>KiepscyTV / Świat Według Kiepskich / Online</title>
 
-    <link
-      rel="stylesheet"
-      href="//cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.min.css"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lato&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <section class="top-bar">
-      <h3 id="episodeTitle"></h3>
-    </section>
-    <section class="display">
-      <div class="main-player">
-        <bp-player id="kiepskiPlayer"></bp-player>
-      </div>
-    </section>
-    <section class="search">
-      <div class="search-input">
-        <span class="mdi mdi-magnify"></span>
-        <input type="text" name="searchbar" id="searchbar" />
-      </div>
-    </section>
-    <section id="episodes"></section>
-    <div class="spacer" style="height: 2em"></div>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Oglądaj Świat według Kiepskich, całe odcinki za darmo, online i bez rejestracji. Wszystkie sezony kiepskich w jednym miejscu." />
+  <meta name="robots" content="index">
+  <meta property="og:locale" content="pl_PL" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Świat Według Kiepski / Online / Za Darmo / Bez Rejestracji / Wszystkie Sezony" />
+  <meta property="og:description"
+    content="Świat Według Kiepskich / Całe Odcinki Za Darmo / Online / Bez Rejestracji / Wszystkie Sezony" />
+  <meta property="og:url" content="https://www.kiepscytv.github.io" />
+  <meta property="og:site_name" content="kiepscytv.github.io" />
 
-    <!-- <div id="searchOutput"></div> -->
-  </body>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/css/bootstrap-grid.min.css"
+    integrity="sha512-Aa+z1qgIG+Hv4H2W3EMl3btnnwTQRA47ZiSecYSkWavHUkBF2aPOIIvlvjLCsjapW1IfsGrEO3FU693ReouVTA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/playerstyle.css" />
+  <link rel="stylesheet" href="css/accordion.css" />
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.min.css" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.min.js"
+    integrity="sha512-EKWWs1ZcA2ZY9lbLISPz8aGR2+L7JVYqBAYTq5AXgBkSjRSuQEGqWx8R1zAX16KdXPaCjOCaKE8MCpU0wcHlHA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+  <script type="module" src="js/player.js" defer></script>
+  <script type="text/javascript" src="js/controler.js" defer></script>
+  <script type="text/javascript" src="js/search.js" defer></script>
+  <script type="text/javascript" src="js/sing.js" defer></script>
+  <script type="text/javascript" src="js/index.js" defer></script>
+  <script type="module" src="js/accordion.js" defer></script>
+
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <section class="top-bar">
+    <h3 id="episodeTitle"></h3>
+  </section>
+  <section class="display">
+    <div class="main-player">
+      <bp-player id="kiepskiPlayer"></bp-player>
+    </div>
+  </section>
+  <section class="search">
+    <div class="search-input">
+      <span class="mdi mdi-magnify"></span>
+      <input type="text" name="searchbar" id="searchbar" />
+    </div>
+  </section>
+  <section id="episodes"></section>
+  <div class="spacer" style="height: 2em"></div>
+
+  <!-- <div id="searchOutput"></div> -->
+</body>
+
 </html>
